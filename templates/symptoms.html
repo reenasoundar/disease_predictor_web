@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Symptoms </title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.png') }}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='bg2.jpg') }}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            text-align: center;
+            padding-top: 80px;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        form {
+            display: inline-block;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px 60px;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .symptom {
+            display: block;
+            margin: 10px 0;
+            font-size: 18px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Select Your Symptoms</h1>
+    <!-- Static Images Row -->
+<div class="symptom-icons">
+    <img src="{{ url_for('static', filename='img1.png') }}" alt="Symptom Icon 1">
+    <img src="{{ url_for('static', filename='img2.png') }}" alt="Symptom Icon 2">
+    <img src="{{ url_for('static', filename='img3.png') }}" alt="Symptom Icon 3">
+    <img src="{{ url_for('static', filename='img4.png') }}" alt="Symptom Icon 4">
+</div>
+
+
+    <form method="POST" action="/symptoms">
+        <!-- Hidden inputs to pass patient details to result page -->
+        <input type="hidden" name="name" value="{{ name }}">
+        <input type="hidden" name="age" value="{{ age }}">
+        <input type="hidden" name="gender" value="{{ gender }}">
+        <input type="hidden" name="blood_group" value="{{ blood_group }}">
+        <input type="hidden" name="height" value="{{ height }}">
+        <input type="hidden" name="weight" value="{{ weight }}">
+
+        {% for symptom in symptoms %}
+            <label class="symptom">
+                <input type="checkbox" name="{{ symptom }}" value="yes"> {{ symptom }}
+            </label>
+        {% endfor %}
+
+        <br>
+        <button type="submit">Get Prediction</button>
+    </form>
+</body>
+</html>

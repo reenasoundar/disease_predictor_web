@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='logo.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="bg-result">
+    <div class="container">
+        <h2 class="result-title">Prediction Result</h2>
+
+        <!-- Motivational Slogan -->
+        <p class="result-slogan">Your health journey starts with awareness. Let’s take the next step together.</p>
+
+        <!-- Patient Details -->
+        <div class="patient-details">
+            <h3>Patient Information</h3>
+            <ul>
+                <li><strong>Name:</strong> {{ name }}</li>
+                <li><strong>Age:</strong> {{ age }}</li>
+                <li><strong>Gender:</strong> {{ gender }}</li>
+                <li><strong>Height:</strong> {{ height }} cm</li>
+                <li><strong>Weight:</strong> {{ weight }} kg</li>
+                <li><strong>Blood Group:</strong> {{ blood_group }}</li>
+            </ul>
+        </div>
+
+        <!-- Prediction Output -->
+        <div class="prediction-details">
+            <h3>Disease Predicted: <span class="highlight">{{ prediction }}</span></h3>
+            <p>Prediction Confidence: <strong>{{ confidence }}%</strong></p>
+            <p>Model Accuracy: <strong>{{ accuracy }}%</strong></p>
+        </div>
+
+        <!-- 🔽 Download Section (Moved Here) -->
+        <div class="download-section">
+            <h3>Download Your Result</h3>
+            <a href="{{ url_for('download_result', prediction=prediction, confidence=confidence, accuracy=accuracy) }}" class="download-button">
+                <button type="button">Download Result</button>
+            </a>
+        </div>
+
+        <!-- Review Section -->
+        <div class="review-section">
+            <h3>Leave a Review</h3>
+            <form action="/submit-review" method="POST">
+                <textarea name="review" placeholder="Write your feedback here..." required></textarea>
+                <br>
+                <button type="submit">Submit Review</button>
+            </form>
+        </div>        
+    </div>
+</body>
+</html>

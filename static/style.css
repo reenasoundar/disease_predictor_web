@@ -1,0 +1,280 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Backgrounds */
+.bg-home {
+    background-image: url("../static/home_background.jpg");
+}
+.bg-symptoms {
+    background-image: url("../static/symptoms_background.jpg");
+}
+.bg-result {
+    background-image: url("../static/result_background.jpg");
+}
+
+/* Header */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    margin-top: 10px;
+}
+
+.header-text {
+    text-align: left;
+}
+
+.title-font {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    color:#093702;
+    margin: 0;
+    text-shadow: 1px 1px 8px rgba(0, 255, 255, 0.3);
+}
+
+/* Slogan Animation */
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    50% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.slogan {
+    font-size: 24px;
+    font-style: italic;
+    color: #f8f9fa;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    animation: slideIn 5s ease-in-out infinite; /* Apply the animation */
+}
+
+
+/* Form Container */
+.container {
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    margin: 5% auto;
+    width: 60%;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #000;
+}
+
+/* Form Inputs */
+input[type="text"],
+input[type="number"],
+input[type="password"],
+select {
+    padding: 10px;
+    width: 80%;
+    margin: 10px auto;
+    display: block;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 30px;
+    font-size: 16px;
+    margin-top: 20px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #218838;
+}
+
+/* Extra Elements */
+.checkbox-label {
+    font-size: 18px;
+    display: block;
+    margin: 8px auto;
+    text-align: left;
+    width: 60%;
+}
+
+.result-image {
+    width: 70%;
+    margin-top: 20px;
+    border-radius: 12px;
+}
+
+.result-title {
+    font-size: 36px;
+    color: #13f0f0;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.result-slogan {
+    font-size: 24px;
+    font-style: italic;
+    margin-bottom: 25px;
+    color: #f8f9fa;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.patient-details ul {
+    list-style: none;
+    padding: 0;
+    color: #13f0f0;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.patient-details li {
+    margin-bottom: 8px;
+}
+
+.patient-details li strong {
+    color: #f8f9fa; 
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.prediction-details {
+    margin-top: 18px;
+}
+
+.highlight {
+    color: #60f3f3;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+
+.symptom-icons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.symptom-icons img {
+    width: 130px;        /* Bigger width */
+    height: 130px;       /* Bigger height */
+    object-fit: contain;
+    border-radius: 12px; /* Optional rounded corners */
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.symptom-icons img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.6); /* Glow on hover */
+}
+
+.prediction-details p {
+    font-size: 21px; /* or whatever size you prefer */
+}
+
+.review-section {
+    margin-top: 40px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 10px #000;
+    color: white;
+    text-align: center;
+}
+
+.review-section h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.review-section textarea {
+    width: 80%;
+    height: 100px;
+    border-radius: 8px;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    resize: vertical;
+}
+
+.review-section button {
+    margin-top: 15px;
+    padding: 10px 25px;
+    font-size: 16px;
+    background-color: #007ACC;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.review-section button:hover {
+    background-color: #005fa3;
+}
+
+.flash-message {
+    background-color: #28a745;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px auto;
+    width: 60%;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: 0 0 10px #000;
+}
+.download-section {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.download-button button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.download-button button:hover {
+    background-color: #45a049;
+}
+
+
