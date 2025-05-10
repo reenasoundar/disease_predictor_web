@@ -23,9 +23,9 @@ The model is trained on a synthetic dataset containing realistic combinations of
 ## Getting Started
 Step 1: Clone the Repository  
 '''bash
-git clone https://github.com/reenasoundar/AI-Disease-Prediction
+git clone https://github.com/reenasoundar/disease_predictor_web.git
 
-cd AI-Disease-Prediction
+cd disease_predictor_web.git
 
 Step 2: Set Up a Virtual Environment
 
